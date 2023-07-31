@@ -5,9 +5,9 @@ const router = express.Router();
 
 module.exports = router;
 
-router.get('/get', async (req, res) => {
+router.get('/', async (req, res) => {
     try {
-        const data = Model.find();
+        const data = await Model.find();
         res.status(200).json(data)
     }
     catch (e) {
